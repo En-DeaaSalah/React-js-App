@@ -4,7 +4,7 @@ class NavBar extends Component {
   state = {};
   render() {
     return (
-      <nav className="navbar navbar-light bg-light d-flex align-items-center justify-content-center">
+      <nav className="navbar navbar-light bg-light d-flex align-items-center justify-content-center mb-5">
         <div>
           <span className="navbar-brand">Schedual App</span>
         </div>

@@ -5,7 +5,7 @@ class SideBar extends Component {
   state = {};
   render() {
     return (
-      <div className="container-fluid">
+      <div className="container- col-1">
         <div className="row">
           <div className="col-sm-auto bg-light sticky-top">
             <div className="d-flex flex-sm-column flex-row flex-nowrap bg-light align-items-center sticky-top">

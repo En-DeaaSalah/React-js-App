@@ -14,29 +14,31 @@ class Root extends Component {
   render() {
     return (
       <BrowserRouter>
-        <div className="Root">
-          <NavBar />
-          <SideBar />
-          <Routes>
-            <Route exact="true" path="/" element={<Home />}></Route>
-            <Route
-              exact="true"
-              path="/Positions"
-              element={<Positions />}
-            ></Route>
-            <Route
-              exact="true"
-              path="/Employees"
-              element={<Employees name="E" />}
-            ></Route>
-            <Route
-              exact="true"
-              path="/Schedual"
-              element={<Schedual name="S" />}
-            ></Route>
-          </Routes>
+        <div className="Root container-fluid">
+          <div className="row">
+            <NavBar />
+            <SideBar />
+            <Routes>
+              <Route exact="true" path="/" element={<Home />}></Route>
+              <Route
+                exact="true"
+                path="/Positions"
+                element={<Positions />}
+              ></Route>
+              <Route
+                exact="true"
+                path="/Employees"
+                element={<Employees name="E" />}
+              ></Route>
+              <Route
+                exact="true"
+                path="/Schedual"
+                element={<Schedual name="S" />}
+              ></Route>
+            </Routes>
 
-          <Footer />
+            <Footer />
+          </div>
         </div>
       </BrowserRouter>
     );

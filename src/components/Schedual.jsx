@@ -3,7 +3,16 @@ import axios from "axios";
 class Schedual extends Component {
   state = {};
 
-  handMouseOver() {}
+  componentDidMount() {
+    axios.get("http://127.0.0.1:8000/mainApp/jobs/").then((res) => {
+      console.log(res.data);
+
+      this.setState({
+        employees: res.data,
+      });
+      console.log(this.state.employees);
+    });
+  }
 
   getPositionAss(dayName) {
     return "+";
@@ -11,7 +20,7 @@ class Schedual extends Component {
 
   render() {
     return (
-      <div className="container">
+      <div className="container col-10">
         <h2 className="m-2">Schedual Table</h2>
         <div className="card shadow mb-4">
           <div className="card-header py-3">
@@ -28,40 +37,43 @@ class Schedual extends Component {
                 cellSpacing="10"
               >
                 <thead id="tableHead">
-                  <th>Employees</th>
-                  <th>Su</th>
-                  <th>Mo</th>
-                  <th>Tu</th>
-                  <th>We</th>
-                  <th>Th</th>
-                  <th>Fr</th>
-                  <th>Sa</th>
+                  <tr>
+                    <th>Employees</th>
+                    <th>Su</th>
+                    <th>Mo</th>
+                    <th>Tu</th>
+                    <th>We</th>
+                    <th>Th</th>
+                    <th>Fr</th>
+                    <th>Sa</th>
+                  </tr>
                 </thead>
-
                 <tbody className="p-2 m-3" id="tableBody">
-                  <th>EmployeesName</th>
+                  <tr>
+                    <th>EmployeesName</th>
 
-                  <th>
-                    <span>{this.getPositionAss("Su")}</span>
-                  </th>
-                  <th>
-                    <span>{this.getPositionAss("Mo")}</span>
-                  </th>
-                  <th>
-                    <span>{this.getPositionAss("Tu")}</span>
-                  </th>
-                  <th>
-                    <span>{this.getPositionAss("We")}</span>
-                  </th>
-                  <th>
-                    <span>{this.getPositionAss("Th")}</span>
-                  </th>
-                  <th>
-                    <span>{this.getPositionAss("Fr")}</span>
-                  </th>
-                  <th>
-                    <span>{this.getPositionAss("Sa")}</span>
-                  </th>
+                    <th>
+                      <span>{this.getPositionAss("Su")}</span>
+                    </th>
+                    <th>
+                      <span>{this.getPositionAss("Mo")}</span>
+                    </th>
+                    <th>
+                      <span>{this.getPositionAss("Tu")}</span>
+                    </th>
+                    <th>
+                      <span>{this.getPositionAss("We")}</span>
+                    </th>
+                    <th>
+                      <span>{this.getPositionAss("Th")}</span>
+                    </th>
+                    <th>
+                      <span>{this.getPositionAss("Fr")}</span>
+                    </th>
+                    <th>
+                      <span>{this.getPositionAss("Sa")}</span>
+                    </th>
+                  </tr>
                 </tbody>
               </table>
             </div>
